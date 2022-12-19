@@ -12,5 +12,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = '{SGBD}://{usuario}:{senha}@{servidor}/{
 )
 
 db = SQLAlchemy(app)
-
 app.secret_key = "moredevs"
