@@ -1,0 +1,31 @@
+{% extends "template.html"%}
+{% block conteudo %}
+     <form action="{{ url_for('atualizar') }}" method="post">
+
+        <fieldset>
+
+          <div class="form-group">
+            <label for="nome">Produto</label>
+            <input type="text" id="nome" name="nome" class="form-control" value="{{ produto.nome }}">
+          </div>
+
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" name="marca" class="form-control" value="{{ produto.marca }}">
+          </div>
+
+          <div class="form-group">
+            <label for="unidade">Unidade de medida</label>
+            <input type="text" id="unidade" name="unidade" class="form-control" value="{{ produto.unidade }}">
+          </div>
+
+          <div class="form-group">
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" name="preco" class="form-control" value="{{ produto.preco }}">
+          </div>
+
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </fieldset>
+
+      </form>
+{% endblock %}
