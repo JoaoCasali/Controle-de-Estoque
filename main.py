@@ -36,6 +36,12 @@ def Autenticar():
 
         return redirect(url_for('Index'))
 
+@app.route('/logout')
+def logout():
+    session['usuario_logado'] = None
+    flash('Você foi desconectado')
+
+    return redirect(url_for('login'))
 
 @app.route('/ListarProduto')
 def ListarProduto():
