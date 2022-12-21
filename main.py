@@ -11,7 +11,7 @@ def Index():
 
 @app.route('/Login')
 def Login():
-    return render_template('login.html')
+    return render_template('usuario/login.html')
 
 
 @app.route('/Autenticar', methods=['POST',])
@@ -37,11 +37,11 @@ def Autenticar():
         return redirect(url_for('Index'))
 
 @app.route('/logout')
-def logout():
-    session['usuario_logado'] = None
+def Logout():
+    session.clear()
     flash('Você foi desconectado')
 
-    return redirect(url_for('login'))
+    return redirect(url_for('Login'))
 
 @app.route('/ListarProduto')
 def ListarProduto():
@@ -75,11 +75,6 @@ def ListarEstoque():
 
     lista = Estoque.query.filter_by(USU_ID=session['usuario_id'])
     return render_template("estoque/listar.html", titulo='estoque', estoques=lista)
-
-
-@app.route('/logout')
-def ListarEstoque():
-    return redirect(url_for('Index'))
 
 
 if __name__ == "__main__":
