@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css')}}">
+<script src="{{ url_for('static', filename='js/table.js')}}"></script>
+
+{% extends "template.html" %}
+{% block conteudo %}
+
+<table class="fixed_headers">
+    <thead>
+        <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estoque in estoques %}
+        <tr class="botoes_acao" onclick="AbrirBotoes('{{ estoque.ID }}')">
+            <td>{{ estoque.PRO_ID }}</td>
+            <td>{{ estoque.USU_ID }}</td>
+        </tr>
+        <td colspan="2" class="esconder" id="botoes_{{ estoque.ID }}">
+            <div>
+                <a href="#">Editar</a>
+                <a href="#">Excluir</a>
+            </div>
+        </td>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock conteudo %}

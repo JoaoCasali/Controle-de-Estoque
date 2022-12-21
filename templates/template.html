@@ -2,9 +2,11 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"> -->
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/table.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css')}}">
+   
+    <!-- <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/table.css"> -->
 
 
     <meta charset="UTF-8">
@@ -33,9 +35,9 @@
     <header class="topo">
 
         <div class="cabecalho">
+            <img src="../static/img/logo.png">
             <h1>Estoque da Firma</h1>
-            <div class="usuario_logado">Olá Nome do Usuário</div>
-        </div>
+        </div><div class="usuario_logado">Olá Nome do Usuário</div>
 
         <div class="menu">
             <a class="a_menu" href="#">Produtos</a>
