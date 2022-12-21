@@ -1,0 +1,27 @@
+{% extends "template.html"%}
+{% block conteudo %}
+<table class="table table-dark">
+
+    <thead>
+        <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Unidade de medida</th>
+            <th scope="col">Preço</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto.DSC_PRO }}</td>
+            <td>{{ produto.MRC_DSC }}</td>
+            <td>{{ produto.UNI_MED }}</td>
+            <td>{{ produto.PRC_BRT }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}

@@ -7,7 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = '{SGBD}://{usuario}:{senha}@{servidor}/{
     SGBD='postgresql',
     usuario="moredev",
     senha="123456",
-    servidor="localhost",
+    servidor="localhost:5442",
     database="postgres"
 )
 
