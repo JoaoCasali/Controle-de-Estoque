@@ -74,10 +74,27 @@ h1 {
     padding-top: 20px;
 }
 
+/* botao */
+.novo_item {
+    padding-left: 5%;
+}
+
+button {
+    border: 0px;
+    background-color: #ff0000;
+    transition-duration: 0.4s;
+    color: rgb(0, 0, 0);
+}
+
+.button:hover {
+    background-color: yellow;
+    /* Green */
+    color: rgb(0, 0, 0);
+}
 
 /* titulo do corpo */
-.titulo{
-    margin-top: -10px;
+.titulo {
+    margin-top: 10px;
     margin-bottom: 10px;
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

@@ -10,25 +10,27 @@
     width: 90%;
 }
 
+
 #customers td,
 #customers th {
     padding: 8px;
 }
+
 
 #customers tr:nth-child(even) {
     text-align: center;
     background-color: #1c2261b6;
 }
 
-#customers tr:hover {
-    background-color: #000000;
+#customers .botoes_acao:hover {
+    background-color: #00000097;
 }
 
 #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #000000ce;
+    background-color: #000000;
     color: white;
 }
 

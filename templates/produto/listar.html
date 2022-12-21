@@ -5,12 +5,15 @@
 {% extends "template.html" %}
 {% block conteudo %}
 
-
 <div class="titulo">Lista de Produtos</div>
 
-<table class="fixed_headers" id="customers">
+<div class="novo_item">
+    <button type="button" class="button" name=""> Novo Produto </button>
+</div>
+
+<table id="customers">
     <thead>
-        <tr>
+        <tr class="fixed_headers">
             <th scope="col">ID</th>
             <th scope="col">Produto</th>
             <th scope="col">Marca</th>
@@ -29,8 +32,9 @@
         </tr>
         <td colspan="5" class="esconder" id="botoes_{{ produto.ID }}">
             <div>
-                <a class="sub_menu" href="#">Editar</a>
-                <a class="sub_menu" href="#">Excluir</a>
+                <!-- TODO: criar essas rotas -->
+                <a class="sub_menu" href="url_for('EditarProduto')">Editar</a>
+                <a class="sub_menu" href="url_for('ExcluiProduto')">Excluir</a>
             </div>
         </td>
         {% endfor %}
