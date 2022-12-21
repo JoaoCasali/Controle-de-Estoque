@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='table.css')}}">
-   
+
     <!-- <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/table.css"> -->
 
@@ -37,12 +37,13 @@
         <div class="cabecalho">
             <img src="../static/img/logo.png">
             <h1>Estoque da Firma</h1>
-        </div><div class="usuario_logado">Olá Nome do Usuário</div>
+        </div>
+        <div class="usuario_logado">Olá {{session['usuario_logado'].title()}}</div>
 
         <div class="menu">
-            <a class="a_menu" href="#">Produtos</a>
-            <a class="a_menu" href="#">Estoque</a>
-            <a class="a_menu" href="#">Logout</a>
+            <a class="a_menu" href="url_for('ListarProduto')">Produtos</a>
+            <a class="a_menu" href="url_for('ListarEstoque')">Estoque</a> <!-- TODO: confirmar nome da rota -->
+            <a class="a_menu" href="url_for('Logout')">Logout</a>
         </div>
 
     </header>
@@ -51,8 +52,6 @@
 
         <div class="conteudo">
             {%block conteudo %}{%endblock%}
-
-
         </div>
     </div>
 </body>
