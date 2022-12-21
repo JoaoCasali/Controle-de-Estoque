@@ -5,9 +5,13 @@
 {% extends "template.html" %}
 {% block conteudo %}
 
-<table class="fixed_headers">
+
+<div class="titulo">Lista de Produtos</div>
+
+<table class="fixed_headers" id="customers">
     <thead>
         <tr>
+            <th scope="col">ID</th>
             <th scope="col">Produto</th>
             <th scope="col">Quantidade</th>
         </tr>
@@ -15,13 +19,14 @@
     <tbody>
         {% for estoque in estoques %}
         <tr class="botoes_acao" onclick="AbrirBotoes('{{ estoque.ID }}')">
+            <td>{{ estoque.ID }}</td>
             <td>{{ estoque.PRO_ID }}</td>
-            <td>{{ estoque.USU_ID }}</td>
+            <td>{{ estoque.QTD_PRO }}</td>
         </tr>
-        <td colspan="2" class="esconder" id="botoes_{{ estoque.ID }}">
+        <td colspan="5" class="esconder" id="botoes_{{ estoque.ID }}">
             <div>
-                <a href="#">Editar</a>
-                <a href="#">Excluir</a>
+                <a class="sub_menu" href="#">Editar</a>
+                <a class="sub_menu" href="#">Excluir</a>
             </div>
         </td>
         {% endfor %}

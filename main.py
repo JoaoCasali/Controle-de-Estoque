@@ -1,19 +1,22 @@
 from config import *
 from entities.usuario import Usuarios
 from entities.produto import Produtos
+from entities.estoque import Estoque
 
 
 @app.route("/")
 def Index():
-    return render_template("usuario/login.html")   
+    return render_template("usuario/login.html")
+
 
 @app.route('/Login')
 def Login():
     return render_template('login.html')
 
+
 @app.route('/Autenticar', methods=['POST',])
 def Autenticar():
-    
+
     usuario = Usuarios.query.filter_by(NOM_PES=request.form['usuario']).first()
 
     if usuario:
@@ -21,23 +24,23 @@ def Autenticar():
         if request.form['senha'] == usuario.SENHA:
 
             session['usuario_logado'] = usuario.NOM_PES
-            
+
             session['usuario_id'] = usuario.ID
-            
 
             flash(usuario.NOM_PES + ' Logado')
 
             return redirect(url_for("ListarProduto"))
-        
+
     else:
         flash('Usuario ou senha Incorretos')
 
         return redirect(url_for('   '))
 
+
 @app.route('/ListarProduto')
 def ListarProduto():
-    lista = Produtos.query.filter_by(USU_ID = session['usuario_id'])
-    return render_template("produto/listar.html", titulo = 'produtos', produtos = lista)
+    lista = Produtos.query.filter_by(USU_ID=session['usuario_id'])
+    return render_template("produto/listar.html", titulo='produtos', produtos=lista)
 
 # @app.route('/Criar', methods=['POST',])
 # def Criar():
@@ -60,6 +63,12 @@ def ListarProduto():
 #     db.session.commit()
 
 #     return redirect(url_for('index'))
+
+@app.route('/ListarEstoque')
+def ListarEstoque():
+
+    lista = Estoque.query.filter_by(USU_ID=session['usuario_id'])
+    return render_template("estoque/listar.html", titulo='estoque', estoques=lista)
 
 
 if __name__ == "__main__":
