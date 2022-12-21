@@ -70,6 +70,26 @@ def ListarProduto():
 
 #     return redirect(url_for('index'))
 
+@app.route('/deletar/<int:id>')
+def DeletarProduto(id):
+    if 'usuario_logado' not in session or session['usuario_logado'] is None:
+        return redirect(url_for('Login'))
+    
+    Produtos.query.filter_by(id=id).delete()
+    db.session.commit()
+    flash('Produto Apagado')
+    return redirect(url_for('ListarEstoque'))
+
+@app.route('/deletar/<int:id>')
+def DeletarEstoque(id):
+    if 'usuario_logado' not in session or session['usuario_logado'] is None:
+        return redirect(url_for('Login'))
+    
+    Estoque.query.filter_by(id=id).delete()
+    db.session.commit()
+    flash('Produto Apagado')
+    return redirect(url_for('ListarEstoque'))
+
 @app.route('/ListarEstoque')
 def ListarEstoque():
 
