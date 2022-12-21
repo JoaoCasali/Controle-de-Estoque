@@ -34,7 +34,7 @@ def Autenticar():
     else:
         flash('Usuario ou senha Incorretos')
 
-        return redirect(url_for('   '))
+        return redirect(url_for('Index'))
 
 
 @app.route('/ListarProduto')
@@ -69,6 +69,11 @@ def ListarEstoque():
 
     lista = Estoque.query.filter_by(USU_ID=session['usuario_id'])
     return render_template("estoque/listar.html", titulo='estoque', estoques=lista)
+
+
+@app.route('/logout')
+def ListarEstoque():
+    return redirect(url_for('Index'))
 
 
 if __name__ == "__main__":

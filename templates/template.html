@@ -41,9 +41,9 @@
         <div class="usuario_logado">Olá {{session['usuario_logado'].title()}}</div>
 
         <div class="menu">
-            <a class="a_menu" href="url_for('ListarProduto')">Produtos</a>
-            <a class="a_menu" href="url_for('ListarEstoque')">Estoque</a> <!-- TODO: confirmar nome da rota -->
-            <a class="a_menu" href="url_for('Logout')">Logout</a>
+            <a class="a_menu" href="{{url_for('ListarProduto')}}">Produtos</a>
+            <a class="a_menu" href="{{url_for('ListarEstoque')}}">Estoque</a>
+            <a class="a_menu" href="{{url_for('Logout')}}">Logout</a>
         </div>
 
     </header>
