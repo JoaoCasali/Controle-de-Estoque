@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = '{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format(
     SGBD='postgresql',
-    usuario="moredev",
+    usuario="eniac",
     senha="123456",
     servidor="localhost:5442",
     database="postgres"
