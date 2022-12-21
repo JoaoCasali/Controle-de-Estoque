@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"> -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/table.css">
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +30,32 @@
 
 <body>
 
+    <header class="topo">
+
+        <div class="cabecalho">
+            <h1>Estoque da Firma</h1>
+            <div class="usuario_logado">Olá Nome do Usuário</div>
+        </div>
+
+        <div class="menu">
+            <a class="a_menu" href="#">Produtos</a>
+            <a class="a_menu" href="#">Estoque</a>
+            <a class="a_menu" href="#">Logout</a>
+        </div>
+
+    </header>
+
+    <div class="corpo">
+
+        <div class="conteudo">
+            {%block conteudo %}{%endblock%}
+
+
+        </div>
+    </div>
 </body>
+<footer>
+    <span>Desenvolvido Turma +Devs2Blu Noturno</span>
+</footer>
 
 </html>
