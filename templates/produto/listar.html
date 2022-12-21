@@ -2,30 +2,26 @@
 {% block conteudo %}
 <table class="table table-dark">
 
-<thead>
-    <tr>
-        <th scope="col">Produto</th>
-        <th scope="col">Marca</th>
-        <th scope="col">Unidade de medida</th>
-        <th scope="col">Preço</th>
-
-    </tr>
-</thead>
-
-<tbody>
-    {% for produto in produtos %}
+    <thead>
         <tr>
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.marca }}</td>
-            <td>{{ produto.unidade }}</td>
-            <td>{{ produto.preco }}</td>
+            <th scope="col">Produto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Unidade de medida</th>
+            <th scope="col">Preço</th>
 
-            <td>
-                <a href="{{ url_for('editar', id=produto.id ) }}">Editar</a>
-            </td>
         </tr>
-     {% endfor %}
+    </thead>
 
-</tbody>
+    <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto.DSC_PRO }}</td>
+            <td>{{ produto.MRC_DSC }}</td>
+            <td>{{ produto.UNI_MED }}</td>
+            <td>{{ produto.PRC_BRT }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
 </table>
 {% endblock %}

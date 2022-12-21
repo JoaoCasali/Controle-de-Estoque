@@ -6,3 +6,193 @@
     padding: 0;
     margin: 0;
 }
+
+.esconder {
+    display: none;
+}
+
+.topo {
+    width: 80%;
+    height: 150px;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    margin-top: 10px;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    background-color: rgb(251, 251, 62)
+}
+
+.cabecalho {
+    height: 128px;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+}
+
+.usuario_logado {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 35px;
+}
+
+.menu {
+    padding-left: 5px;
+    height: 22px;
+    background-color: #000000ef;
+    color: yellow;
+}
+
+/* AJUSTAR POSIÇÃO DO MENU (SUBIR UM POUCO) */
+.a_menu {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 5px;
+    font-size: 12px;
+    color: yellow;
+}
+
+.a_menu:hover {
+    text-decoration: none;
+    color: yellow;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.corpo {
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    background-image: url("../img/corpo.jpg");
+    width: 80%;
+    height: 490px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+footer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.login {
+    margin: 200px auto;
+    height: 400px;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
+
+.tb_login {
+    padding-top: 20px;
+    margin: auto;
+}
+
+.tb_login,
+th {
+    text-align: right;
+}
+
+.bt_login {
+    margin: auto;
+}
+
+.msg_login li {
+    text-align: center;
+    list-style: none;
+    color: red;
+}
+
+.tb_info {
+    width: 100%;
+}
+
+.nickname {
+    font-style: italic;
+    text-align: right;
+    padding-right: 7px;
+    color: rgb(0, 255, 0);
+    opacity: 0.6;
+}
+
+.nickname li {
+    font-style: italic;
+    text-align: right;
+    list-style: none;
+    padding-right: 7px;
+}
+
+
+
+
+
+
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+/* 
+html,
+body {
+    background-image: url("../img/corpo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+} */
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.726) !important;
+}
+
+.social_icon span {
+    height: 5px;
+    font-size: 60px;
+    margin-left: 10px;
+}
+
+.social_icon img {
+    height: 120px;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
