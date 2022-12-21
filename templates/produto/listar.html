@@ -1,27 +1,40 @@
-{% extends "template.html"%}
-{% block conteudo %}
-<table class="table table-dark">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css')}}">
+<script src="{{ url_for('static', filename='js/table.js')}}"></script>
 
+{% extends "template.html" %}
+{% block conteudo %}
+
+
+<div class="titulo">Lista de Produtos</div>
+
+<table class="fixed_headers" id="customers">
     <thead>
         <tr>
+            <th scope="col">ID</th>
             <th scope="col">Produto</th>
             <th scope="col">Marca</th>
             <th scope="col">Unidade de medida</th>
             <th scope="col">Preço</th>
-
         </tr>
     </thead>
-
     <tbody>
         {% for produto in produtos %}
-        <tr>
+        <tr class="botoes_acao" onclick="AbrirBotoes('{{ produto.ID }}')">
+            <td>{{ produto.ID }}</td>
             <td>{{ produto.DSC_PRO }}</td>
             <td>{{ produto.MRC_DSC }}</td>
             <td>{{ produto.UNI_MED }}</td>
             <td>{{ produto.PRC_BRT }}</td>
         </tr>
+        <td colspan="5" id="botoes_{{ produto.ID }}">
+            <div>
+                <a class="sub_menu" href="#">Editar</a>
+                <a class="sub_menu" href="#">Excluir</a>
+            </div>
+        </td>
         {% endfor %}
 
     </tbody>
 </table>
-{% endblock %}
+{% endblock conteudo %}

@@ -1,0 +1,66 @@
+/* @import url('https://fonts.googleapis.com/css?family=Numans'); */
+
+.body_login {
+    width: 100%;
+    background-image: url("../img/corpo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Numans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.726) !important;
+}
+
+.social_icon span {
+    height: 5px;
+    font-size: 60px;
+    margin-left: 10px;
+}
+
+.social_icon img {
+    height: 120px;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #04B8A7;
+    color: black;
+    border: 0 !important;
+}
+
+.login_btn {
+    color: black;
+    background-color: #04B8A7;
+    width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
