@@ -30,7 +30,7 @@
         <td colspan="5" class="esconder" id="botoes_{{ estoque.ID }}">
             <div>
                 <a class="sub_menu" href="#">Editar</a>
-                <a class="sub_menu" href="#">Excluir</a>
+                <a class="sub_menu" href="{{url_for('ExcluiEstoque', id=estoque.ID)}}">Excluir</a>
             </div>
         </td>
         {% endfor %}

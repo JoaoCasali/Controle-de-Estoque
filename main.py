@@ -36,7 +36,7 @@ def Autenticar():
 
         return redirect(url_for('Index'))
 
-@app.route('/logout')
+@app.route('/Logout')
 def Logout():
     session.clear()
     flash('Você foi desconectado')
@@ -70,25 +70,23 @@ def ListarProduto():
 
 #     return redirect(url_for('index'))
 
-@app.route('/deletar/<int:id>')
-def DeletarProduto(id):
+@app.route('/ExcluiProduto/<int:id>')
+def ExcluiProduto(id):
     if 'usuario_logado' not in session or session['usuario_logado'] is None:
         return redirect(url_for('Login'))
     
-    Produtos.query.filter_by(id=id).delete()
+    Produtos.query.filter_by(ID=id).delete()
     db.session.commit()
-    flash('Produto Apagado')
-    return redirect(url_for('ListarEstoque'))
+    return redirect(url_for('ListarProduto'))
 
-@app.route('/deletar/<int:id>')
-def DeletarEstoque(id):
+@app.route('/ExcluiEstoque/<int:id>')
+def ExcluiEstoque(id):
     if 'usuario_logado' not in session or session['usuario_logado'] is None:
         return redirect(url_for('Login'))
     
-    Estoque.query.filter_by(id=id).delete()
+    Estoque.query.filter_by(ID=id).delete()
     db.session.commit()
-    flash('Produto Apagado')
-    return redirect(url_for('ListarEstoque'))
+    return redirect(url_for(' '))
 
 @app.route('/ListarEstoque')
 def ListarEstoque():
