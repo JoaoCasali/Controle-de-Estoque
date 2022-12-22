@@ -11,7 +11,7 @@ def Index():
 
 @app.route('/Login')
 def Login():
-    return render_template('login.html')
+    return render_template('usuario/login.html')
 
 
 @app.route('/Autenticar', methods=['POST',])
@@ -36,6 +36,12 @@ def Autenticar():
 
         return redirect(url_for('Index'))
 
+@app.route('/Logout')
+def Logout():
+    session.clear()
+    flash('Você foi desconectado')
+
+    return redirect(url_for('Login'))
 
 @app.route('/ListarProduto')
 def ListarProduto():
@@ -64,12 +70,29 @@ def ListarProduto():
 
 #     return redirect(url_for('index'))
 
+@app.route('/ExcluiProduto/<int:id>')
+def ExcluiProduto(id):
+    if 'usuario_logado' not in session or session['usuario_logado'] is None:
+        return redirect(url_for('Login'))
+    
+    Produtos.query.filter_by(ID=id).delete()
+    db.session.commit()
+    return redirect(url_for('ListarProduto'))
+
+@app.route('/ExcluiEstoque/<int:id>')
+def ExcluiEstoque(id):
+    if 'usuario_logado' not in session or session['usuario_logado'] is None:
+        return redirect(url_for('Login'))
+    
+    Estoque.query.filter_by(ID=id).delete()
+    db.session.commit()
+    return redirect(url_for(' '))
+
 @app.route('/ListarEstoque')
 def ListarEstoque():
 
     lista = Estoque.query.filter_by(USU_ID=session['usuario_id'])
     return render_template("estoque/listar.html", titulo='estoque', estoques=lista)
-
 
 @app.route('/logout')
 def Logout():

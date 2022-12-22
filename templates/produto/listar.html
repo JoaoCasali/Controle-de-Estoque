@@ -33,8 +33,8 @@
         <td colspan="5" class="esconder" id="botoes_{{ produto.ID }}">
             <div>
                 <!-- TODO: criar essas rotas -->
-                <a class="sub_menu" href="url_for('EditarProduto')">Editar</a>
-                <a class="sub_menu" href="url_for('ExcluiProduto')">Excluir</a>
+                <a class="sub_menu" href="">Editar</a>
+                <a class="sub_menu" href="{{url_for('ExcluiProduto', id=produto.ID)}}">Excluir</a>
             </div>
         </td>
         {% endfor %}
