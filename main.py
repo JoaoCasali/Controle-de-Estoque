@@ -94,6 +94,28 @@ def ListarEstoque():
     lista = Estoque.query.filter_by(USU_ID=session['usuario_id'])
     return render_template("estoque/listar.html", titulo='estoque', estoques=lista)
 
+@app.route('/logout')
+def Logout():
+    return redirect(url_for('Index'))
+
+@app.route('/NovoEstoque')
+def NovoEstoque():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect (url_for('Login'))
+
+    return render_template('estoque/editar.html', titulo='Novo Estoque', estoque = Estoque(PRO_ID = '', QTD_PRO = ''))
+
+@app.route('/CriarEstoque', methods=['POST'])
+def CriarEstoque():
+    produto = request.form['produto_id']
+    quantidade = request.form['quantidade']
+
+    cadastro_estoque = Estoque(PRO_ID=produto, QTD_PRO=quantidade, USU_ID=session["usuario_id"])
+
+    db.session.add(cadastro_estoque)
+    db.session.commit()
+
+    return redirect (url_for('ListarEstoque'))
 
 if __name__ == "__main__":
     app.run(debug=True)
